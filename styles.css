@@ -1,23 +1,44 @@
-div{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ffeef8, #ffe0ec);
+    min-height: 100vh;
+}
+
+div {
     display: flex;
     margin-top: 5%;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
-img{
+
+img {
     display: flex;
     align-items: center;
     border-radius: 25px;
+    max-width: 100%;
+    height: auto;
+    width: 25%;
+    min-width: 150px;
 }
-form{
+
+form {
     display: flex;
     justify-content: center;
-    margin-top: 3%;
     gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
-form button{
+
+form button {
     width: auto;
-    padding: 10px 15px 10px 15px;
+    padding: 10px 15px;
     border-radius: 5px;
     border-width: 1px;
     font-weight: bold;
@@ -26,8 +47,86 @@ form button{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #ff5f6d, #d88d8d);
     box-shadow: 0 4px 15px rgba(255, 95, 109, 0.3);
+    transition: all 0.3s ease;
+    border: none;
 }
-form button:hover{
+
+form button:hover {
     background: linear-gradient(135deg, #e4e4e4, #d88d8d);
     box-shadow: 0 4px 15px rgba(255, 95, 109, 0.3);
+    transform: scale(1.05);
+}
+
+#buttons-container h2 {
+    font-family: 'Georgia', 'Courier New', serif;
+    font-size: 3em;
+    color: #ff1493;
+    text-align: center;
+    margin: 20px;
+    animation: bounce 1s infinite;
+    word-wrap: break-word;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Mobile Responsive - Small screens (320px to 480px) */
+@media (max-width: 480px) {
+    div {
+        margin-top: 10%;
+    }
+
+    img {
+        width: 80%;
+        min-width: 120px;
+    }
+
+    form {
+        gap: 8px;
+    }
+
+    form button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    #buttons-container h2 {
+        font-size: 1.8em;
+        margin: 15px 10px;
+    }
+}
+
+/* Tablet Responsive (481px to 768px) */
+@media (max-width: 768px) {
+    img {
+        width: 40%;
+        min-width: 140px;
+    }
+
+    form button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    #buttons-container h2 {
+        font-size: 2.5em;
+    }
+}
+
+/* Large screens (769px and above) */
+@media (min-width: 769px) {
+    img {
+        width: 25%;
+    }
+
+    form button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    #buttons-container h2 {
+        font-size: 3em;
+    }
 }

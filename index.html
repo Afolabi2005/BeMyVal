@@ -8,17 +8,19 @@
   </head>
   <body>
     <div>
-      <img
+      <img class="image"
         src="willyoubeVal.jpg"
         width="25%"
         height="auto"
         alt="Will You be My valentine?"
       />
     </div>
-    <form action="">
-      <button class="yes-btn">Yes</button>
-      <button class="no-btn">No</button>
-    </form>
+    <div id="buttons-container">
+      <form action="">
+        <button class="yes-btn">Yes</button>
+        <button class="no-btn">No</button>
+      </form>
+    </div>
 
     <script>
         const noButton = document.querySelector('.no-btn');
@@ -34,13 +36,11 @@
         )
         
         const yesButton = document.querySelector('.yes-btn');
+        const image = document.querySelector('.image');
         
         yesButton.addEventListener('click', () => {
-            yesButton.innerHTML = '<img src="hurray.jpg" alt="Hurray!" style="width: 100%; height: auto;">';
-            yesButton.style.border = 'none';
-            yesButton.style.background = 'none';
-            yesButton.style.cursor = 'default';
-            yesButton.disabled = true;
+            image.src = 'yay!!.gif';
+            document.getElementById('buttons-container').innerHTML = '<h2>❤️ I am very Lucky! 🥳</h2>';
         });
         
     </script>
